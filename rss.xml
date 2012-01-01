@@ -1,0 +1,27 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+        <title>Showing my Working</title>
+        <link>http://amirhhz.github.com/</link>
+        <atom:link href="http://amirhhz.github.com/rss.xml" rel="self" type="application/rss+xml" />
+        <description>Amir Showing his Working</description>
+        <language>en-gb</language>
+        <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
+        <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</lastBuildDate>
+
+        {% for post in site.posts %}
+        <item>
+            <title>{{ post.title }}</title>
+            <link>http://amirhhz.github.com{{ post.url }}</link>
+            <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
+            <author>amir.h.hajizamani@gmail.com (Amir H. Hajizamani)</author>
+            <guid>http://amirhhz.github.com{{ post.id }}</guid>
+            <description>{{ post.content | xml_escape }}</description>
+        </item>
+        {% endfor %}
+
+    </channel>
+</rss>
